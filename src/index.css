@@ -41,6 +41,35 @@
   opacity: 1;
 }
 
+/* ===== Theme tokens ===== */
+:root {
+  --bg-from: 9 9 11;
+  --bg-via: 24 24 27;
+  --bg-to: 0 0 0;
+  --text: 255 255 255;
+  --muted: 161 161 170;
+  --accent: 16 185 129;
+}
+
+/* ===== DARK (default) ===== */
+html.theme-dark {
+  --bg-from: 9 9 11;
+  --bg-via: 24 24 27;
+  --bg-to: 0 0 0;
+  --text: 255 255 255;
+  --muted: 161 161 170;
+  --accent: 16 185 129;
+}
+
+/* ===== LIGHT ===== */
+html.theme-light {
+  --bg-from: 244 244 245;
+  --bg-via: 255 255 255;
+  --bg-to: 228 228 231;  
+  --text: 9 9 11;
+  --muted: 63 63 70; 
+  --accent: 2 132 199;    
+}
 
 
 

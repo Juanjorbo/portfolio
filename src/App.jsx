@@ -8,25 +8,46 @@ import Hero from "./sections/Hero";
 import Experience from "./sections/Experience";
 import Skills from "./sections/Skills";
 import Portfolio from "./sections/Portfolio";
-import Contact from "./sections/Contact";
 import About from "./sections/About";
+import Contact from "./sections/Contact";
 
 export default function App() {
   const [lang, setLang] = useState("es");
   const t = texts[lang];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white">
+    <div
+      className="min-h-screen
+                 text-[rgb(var(--text))]
+                 bg-gradient-to-br
+                 from-[rgb(var(--bg-from))]
+                 via-[rgb(var(--bg-via))]
+                 to-[rgb(var(--bg-to))]"
+    >
       <Navbar t={t} />
       <LanguageFloating lang={lang} setLang={setLang} />
 
       <main>
-        <section id="resume"><Hero t={t} /></section>
-        <section id="experiencia"><Experience t={t} /></section>
-        <section id="skills"><Skills t={t} /></section>
-        <section id="portfolio"><Portfolio t={t} /></section>
-        <section id="about"><About t={t} /></section>
-        <section id="contact"><Contact t={t} /></section>
+        <section id="resume" className="scroll-mt-28">
+          <Hero t={t} />
+        </section>
+
+        <section id="experiencia" className="scroll-mt-28">
+          <Experience t={t} />
+          <Skills t={t} />
+        </section>
+
+        <section id="portfolio" className="scroll-mt-28">
+          <Portfolio t={t} />
+        </section>
+
+        <section id="about" className="scroll-mt-28">
+          <About t={t} />
+        </section>
+
+        <section id="contact" className="scroll-mt-28">
+          <Contact t={t} />
+        </section>
       </main>
     </div>
   );
