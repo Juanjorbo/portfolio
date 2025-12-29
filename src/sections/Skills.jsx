@@ -15,52 +15,23 @@ import {
 const cardVariants = { rest: { y: 0 }, hover: { y: -9 } };
 const glowVariants = { rest: { opacity: 0 }, hover: { opacity: 1 } };
 
-const SKILL_GROUPS = [
-  {
-    title: "Backend & Lenguajes",
-    accent: "text-violet-300",
-    glow: "from-violet-400/40",
-    items: [
-      { name: "Java", Icon: SiOpenjdk },
-      { name: "C#", Icon: SiDotnet },
-      { name: "MySQL", Icon: SiMysql },
-      { name: "APIs REST", Icon: null },
-    ],
-  },
-  {
-    title: "Frontend",
-    accent: "text-cyan-300",
-    glow: "from-cyan-400/40",
-    items: [
-      { name: "HTML", Icon: SiHtml5 },
-      { name: "CSS", Icon: SiCss3 },
-      { name: "JavaScript", Icon: SiJavascript },
-      { name: "React", Icon: SiReact },
-      { name: "Tailwind", Icon: SiTailwindcss },
-    ],
-  },
-  {
-    title: "Herramientas",
-    accent: "text-amber-300",
-    glow: "from-amber-400/40",
-    items: [
-      { name: "Git", Icon: SiGit },
-      { name: "GitHub", Icon: SiGithub },
-      { name: "VS Code", Icon: null },
-    ],
-  },
-  {
-    title: "Extras",
-    accent: "text-emerald-300",
-    glow: "from-emerald-400/35",
-    items: [
-      { name: "Unity / VR (plus)", Icon: null },
-      { name: "Multiplataforma", Icon: null },
-    ],
-  },
-];
+// mapeo iconos por string (para poder traducir todo desde texts.js)
+const ICONS = {
+  html: SiHtml5,
+  css: SiCss3,
+  js: SiJavascript,
+  react: SiReact,
+  tailwind: SiTailwindcss,
+  mysql: SiMysql,
+  git: SiGit,
+  github: SiGithub,
+  csharp: SiDotnet,
+  java: SiOpenjdk,
+};
 
-function SkillTile({ name, Icon }) {
+function SkillTile({ name, iconKey }) {
+  const Icon = iconKey ? ICONS[iconKey] : null;
+
   return (
     <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2 hover:bg-white/10 transition">
       <div className="w-6 h-6 flex items-center justify-center text-white/90">
@@ -71,7 +42,9 @@ function SkillTile({ name, Icon }) {
   );
 }
 
-export default function Skills() {
+export default function Skills({ t }) {
+  const groups = t.skills.groups;
+
   return (
     <section className="py-24 px-6 max-w-6xl mx-auto">
       <motion.h2
@@ -81,7 +54,7 @@ export default function Skills() {
         transition={{ duration: 0.6 }}
         className="text-3xl md:text-4xl font-semibold text-center"
       >
-        Skills & Tecnologías
+        {t.skills.title}
       </motion.h2>
 
       <motion.p
@@ -91,11 +64,11 @@ export default function Skills() {
         transition={{ duration: 0.6, delay: 0.05 }}
         className="text-zinc-300 text-center max-w-2xl mx-auto mt-4"
       >
-        Un stack claro, con foco en backend y calidad de software.
+        {t.skills.subtitle}
       </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-        {SKILL_GROUPS.map((group) => (
+        {groups.map((group) => (
           <motion.div
             key={group.title}
             variants={cardVariants}
@@ -121,7 +94,7 @@ export default function Skills() {
 
             <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
               {group.items.map((it) => (
-                <SkillTile key={it.name} name={it.name} Icon={it.Icon} />
+                <SkillTile key={it.name} name={it.name} iconKey={it.icon} />
               ))}
             </div>
           </motion.div>

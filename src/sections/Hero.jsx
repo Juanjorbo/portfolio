@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
-function AvailabilityBadge() {
+function AvailabilityBadge({ t }) {
   return (
     <a
       href="https://www.linkedin.com/in/juanjorincon/"
@@ -11,12 +11,14 @@ function AvailabilityBadge() {
                  border border-emerald-400/40 bg-zinc-900/60 text-white/90
                  hover:bg-zinc-900/80 transition"
     >
-      Disponible para trabajar
+      {t.hero.available}
     </a>
   );
 }
 
-export default function Hero() {
+export default function Hero({ t }) {
+  const [a, b, c] = t.hero.subtitleTyping;
+
   return (
     <section className="min-h-screen flex flex-col px-6 pt-24">
       {/* Centro: foto + texto */}
@@ -33,7 +35,7 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full bg-emerald-400/15 blur-2xl" />
               <img
                 src="/src/assets/profile.png"
-                alt="Juanjo Rincón"
+                alt={t.hero.name}
                 className="relative w-44 h-44 md:w-56 md:h-56 rounded-full object-cover
                            border border-white/20 shadow-xl"
                 draggable={false}
@@ -50,11 +52,11 @@ export default function Hero() {
               >
                 <TypeAnimation
                   sequence={[
-                    "Software Engineer", 1800,
+                    a, 1800,
                     "", 900,
-                    "Backend Developer", 1800,
+                    b, 1800,
                     "", 900,
-                    "Developer", 1800,
+                    c, 1800,
                     "", 900,
                   ]}
                   speed={28}
@@ -71,7 +73,7 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.1 }}
                 className="text-5xl md:text-6xl font-bold mt-3"
               >
-                Juanjo Rincón
+                {t.hero.name}
               </motion.h1>
 
               <motion.p
@@ -80,7 +82,7 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.18 }}
                 className="text-lg md:text-xl text-zinc-300 max-w-xl mt-5 leading-relaxed mx-auto md:mx-0"
               >
-                Construyo experiencias digitales modernas, limpias y con intención.
+                {t.hero.tagline}
               </motion.p>
             </div>
           </div>
@@ -94,7 +96,7 @@ export default function Hero() {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="pb-10 flex justify-center"
       >
-        <AvailabilityBadge />
+        <AvailabilityBadge t={t} />
       </motion.div>
     </section>
   );
