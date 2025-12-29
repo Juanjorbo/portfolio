@@ -130,7 +130,7 @@ function HeroSection() {
               <div className="absolute inset-0 rounded-full bg-emerald-400/20 blur-2xl" />
 
               <img
-                src="/src/assets/profile.png"
+                src="/src/assets/profile.g"
                 alt="Juanjo Rincón"
                 className="relative w-44 h-44 md:w-56 md:h-56
                            rounded-full object-cover

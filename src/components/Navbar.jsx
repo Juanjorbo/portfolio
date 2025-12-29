@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -15,12 +14,17 @@ function useScrolled(threshold = 24) {
   return scrolled;
 }
 
+const LINKS = [
+  { label: "Resume", href: "#resume" },
+  { label: "Experiencia", href: "#experiencia" },
+  { label: "Skills", href: "#skills" },
+  { label: "Sobre mí", href: "#about" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Contacto", href: "#contact" },
+];
+
 export default function Navbar() {
   const scrolled = useScrolled(24);
-
-  const base = "px-3 py-2 text-sm transition rounded-lg";
-  const inactive = "text-white/70";
-  const active = "text-white";
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
@@ -37,22 +41,14 @@ export default function Navbar() {
         ].join(" ")}
       >
         <div className="flex items-center gap-1">
-          {[
-            { to: "/", label: "Resume", end: true },
-            { to: "/sobre-mi", label: "Sobre mí" },
-            { to: "/portfolio", label: "Portfolio" },
-            { to: "/contacto", label: "Contacto" },
-          ].map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.end}
-              className={({ isActive }) =>
-                `${base} ${isActive ? active : inactive}`
-              }
+          {LINKS.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="px-3 py-2 rounded-lg text-sm text-white/70 hover:text-white hover:bg-white/5 transition"
             >
-              <span className="nav-link-fx">{link.label}</span>
-            </NavLink>
+              <span className="nav-link-fx">{l.label}</span>
+            </a>
           ))}
         </div>
       </motion.nav>
