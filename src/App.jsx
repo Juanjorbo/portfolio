@@ -4,7 +4,7 @@ import Experience from "./sections/Experience";
 import Skills from "./sections/Skills";
 import About from "./sections/About";
 import Portfolio from "./sections/Portfolio";
-import Contact from "./sections/Contact.jsx";
+import Contact from "./sections/Contact";
 
 function Section({ id, children }) {
   return (
@@ -32,17 +32,18 @@ export default function App() {
           <Skills />
         </Section>
 
-        <Section id="about">
-          <About />
-        </Section>
-
         <Section id="portfolio">
           <Portfolio />
+        </Section>
+
+        <Section id="about">
+          <About />
         </Section>
 
         <Section id="contact">
           <Contact />
         </Section>
+
       </main>
     </div>
   );

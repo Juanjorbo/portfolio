@@ -80,7 +80,7 @@ export default function Hero() {
                 transition={{ duration: 0.7, delay: 0.18 }}
                 className="text-lg md:text-xl text-zinc-300 max-w-xl mt-5 leading-relaxed mx-auto md:mx-0"
               >
-                Desarrollo software backend con foco en claridad, estructura y calidad.
+                Construyo experiencias digitales modernas, limpias y con intención.
               </motion.p>
             </div>
           </div>

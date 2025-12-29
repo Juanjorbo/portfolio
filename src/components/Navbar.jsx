@@ -15,13 +15,14 @@ function useScrolled(threshold = 24) {
 }
 
 const LINKS = [
-  { label: "Resume", href: "#resume" },
+  { label: "Inicio", href: "#resume" },
   { label: "Experiencia", href: "#experiencia" },
-  { label: "Skills", href: "#skills" },
-  { label: "Sobre mí", href: "#about" },
   { label: "Portfolio", href: "#portfolio" },
+  { label: "Sobre mí", href: "#about" },
   { label: "Contacto", href: "#contact" },
 ];
+
+
 
 export default function Navbar() {
   const scrolled = useScrolled(24);

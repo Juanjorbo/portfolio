@@ -49,6 +49,15 @@ const SKILL_GROUPS = [
       { name: "VS Code", Icon: null },
     ],
   },
+  {
+    title: "Extras",
+    accent: "text-emerald-300",
+    glow: "from-emerald-400/35",
+    items: [
+      { name: "Unity / VR (plus)", Icon: null },
+      { name: "Multiplataforma", Icon: null },
+    ],
+  },
 ];
 
 function SkillTile({ name, Icon }) {
