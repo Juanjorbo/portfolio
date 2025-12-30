@@ -42,8 +42,8 @@
 
   --nav-solid: 9 9 11;
 
-  --accent: 16 185 129;
-  --accent-soft: 52 211 153;
+  --accent: 37 99 235;        /* blue-600 */
+  --accent-soft: 96 165 250;  /* blue-400 */
 
   --glow: 255 255 255;
   --glow-soft: 255 255 255;
@@ -68,9 +68,9 @@ html.theme-light {
   --btn-hover: 0 0 0 / 0.12;
 
   --nav-solid: 255 255 255;
-
-  --accent: 2 132 199;
-  --accent-soft: 56 189 248;
+  
+  --accent: 220 38 38;        /* red-600 */
+  --accent-soft: 248 113 113; /* red-400 */
 
   --glow: 0 0 0;
   --glow-soft: 0 0 0;

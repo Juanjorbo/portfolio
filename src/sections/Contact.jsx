@@ -41,7 +41,7 @@ export default function Contact({ t }) {
         </a>
 
         <a
-          href="mailto:TU_EMAIL_AQUI"
+          href="mailto:juanjoofx@gmail.com"
           className="
             px-7 py-3 rounded-2xl font-semibold
             border border-[rgb(var(--border))]
@@ -57,3 +57,4 @@ export default function Contact({ t }) {
     </section>
   );
 }
+  

@@ -1,35 +1,44 @@
 import { motion } from "framer-motion";
-import {
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiReact,
-  SiTailwindcss,
-  SiMysql,
-  SiGit,
-  SiGithub,
-  SiDotnet,
-  SiOpenjdk,
-} from "react-icons/si";
+import * as Si from "react-icons/si";
+import * as Fi from "react-icons/fi";
 
 const cardVariants = { rest: { y: 0 }, hover: { y: -9 } };
 const glowVariants = { rest: { opacity: 0.2 }, hover: { opacity: 1 } };
 
+const FallbackIcon = Fi.FiBox;
+
 const ICONS = {
-  html: SiHtml5,
-  css: SiCss3,
-  js: SiJavascript,
-  react: SiReact,
-  tailwind: SiTailwindcss,
-  mysql: SiMysql,
-  git: SiGit,
-  github: SiGithub,
-  csharp: SiDotnet,
-  java: SiOpenjdk,
+  html: Si.SiHtml5,
+  css: Si.SiCss3,
+  js: Si.SiJavascript,
+  typescript: Si.SiTypescript,
+  react: Si.SiReact,
+  vue: Si.SiVuedotjs,
+  angular: Si.SiAngular,
+  tailwind: Si.SiTailwindcss,
+  wordpress: Si.SiWordpress,
+
+  java: Si.SiOpenjdk,
+  csharp: Si.SiDotnet,
+  dotnet: Si.SiDotnet,
+  php: Si.SiPhp,
+  mysql: Si.SiMysql,
+  mongodb: Si.SiMongodb,
+
+  api: Fi.FiServer,
+
+  // Tools
+  git: Si.SiGit,
+  github: Si.SiGithub,
+  vscode: Si.SiVisualstudiocode,
+
+  vercel: Si.SiVercel,
+
+  unity: Si.SiUnity,
 };
 
 function SkillTile({ name, iconKey }) {
-  const Icon = iconKey ? ICONS[iconKey] : null;
+  const Icon = ICONS[iconKey] || FallbackIcon;
 
   return (
     <div
@@ -43,7 +52,7 @@ function SkillTile({ name, iconKey }) {
       "
     >
       <div className="w-6 h-6 flex items-center justify-center">
-        {Icon ? <Icon className="w-5 h-5" /> : null}
+        <Icon className="w-5 h-5" />
       </div>
       <span className="text-sm">{name}</span>
     </div>
@@ -92,7 +101,6 @@ export default function Skills({ t }) {
               p-6 shadow-xl
             "
           >
-            {/* Glow exterior por grupo (Dark/Light) */}
             <motion.div
               variants={glowVariants}
               transition={{ duration: 0.25 }}
@@ -109,7 +117,6 @@ export default function Skills({ t }) {
               />
             </motion.div>
 
-            {/* Glow interior (inset) por grupo */}
             <motion.div
               variants={glowVariants}
               transition={{ duration: 0.25 }}

@@ -29,14 +29,14 @@ export default function Hero({ t }) {
       <div className="flex-1 flex items-center justify-center">
         <div className="w-full max-w-5xl">
           <div className="flex flex-col md:flex-row items-center justify-center gap-10">
-            {/* Foto */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="relative shrink-0"
             >
-              <div className="absolute inset-0 rounded-full bg-[rgb(var(--accent))]/15 blur-2xl" />
+              <div className="absolute inset-0 rounded-full bg-[rgb(var(--accent))]/25 blur-3xl" />
+              <div className="absolute inset-0 rounded-full bg-[rgb(var(--accent-soft))]/15 blur-2xl scale-110" />
               <img
                 src="/src/assets/profile.png"
                 alt={t.hero.name}
@@ -48,7 +48,6 @@ export default function Hero({ t }) {
               />
             </motion.div>
 
-            {/* Texto */}
             <div className="text-center md:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 12 }}

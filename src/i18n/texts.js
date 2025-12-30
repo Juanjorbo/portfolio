@@ -1,4 +1,7 @@
 export const texts = {
+  /* =======================
+     ESPAÑOL (ES)
+  ======================= */
   es: {
     nav: {
       inicio: "Inicio",
@@ -11,7 +14,8 @@ export const texts = {
     hero: {
       subtitleTyping: ["Software Engineer", "Backend Developer", "Developer"],
       name: "Juanjo Rincón",
-      tagline: "Desarrollo software backend con foco en claridad, estructura y calidad.",
+      tagline:
+        "Desarrollo software backend con foco en claridad, estructura y calidad.",
       available: "Disponible para trabajar",
     },
 
@@ -22,7 +26,8 @@ export const texts = {
       items: [
         {
           role: "Software Engineer · Backend",
-          company: "Instituto Municipal de Urbanismo — Ayuntamiento de Barcelona",
+          company:
+            "Instituto Municipal de Urbanismo — Ayuntamiento de Barcelona",
           date: "Oct 2024 — Presente",
           desc: [
             "Desarrollo y mantenimiento de software interno crítico para la gestión municipal.",
@@ -57,50 +62,55 @@ export const texts = {
     },
 
     skills: {
-      title: "Skills & Tecnologías",
-      subtitle: "Un stack claro, con foco en backend y calidad de software.",
+      title: "Skills",
+      subtitle: "Tecnologías y herramientas con las que trabajo",
       groups: [
         {
-          title: "Backend & Lenguajes",
-          accent: "text-violet-300",
-          glow: "from-violet-400/40",
-          items: [
-            { name: "Java", icon: "java" },
-            { name: "C#", icon: "csharp" },
-            { name: "MySQL", icon: "mysql" },
-            { name: "APIs REST", icon: null },
-          ],
-        },
-        {
           title: "Frontend",
-          accent: "text-cyan-300",
-          glow: "from-cyan-400/40",
+          accent: "text-pink-400",
+          glow: "from-pink-500/40",
           items: [
             { name: "HTML", icon: "html" },
             { name: "CSS", icon: "css" },
             { name: "JavaScript", icon: "js" },
+            { name: "TypeScript", icon: "typescript" },
             { name: "React", icon: "react" },
-            { name: "Tailwind", icon: "tailwind" },
+            { name: "Vue", icon: "vue" },
+            { name: "Angular", icon: "angular" },
+            { name: "Tailwind CSS", icon: "tailwind" },
+            { name: "WordPress", icon: "wordpress" },
+          ],
+        },
+        {
+          title: "Backend",
+          accent: "text-cyan-400",
+          glow: "from-cyan-500/40",
+          items: [
+            { name: "Java", icon: "java" },
+            { name: "C#", icon: "csharp" },
+            { name: ".NET", icon: "dotnet" },
+            { name: "PHP", icon: "php" },
+            { name: "REST API", icon: "api" },
+            { name: "MySQL", icon: "mysql" },
+            { name: "MongoDB", icon: "mongodb" },
           ],
         },
         {
           title: "Herramientas",
-          accent: "text-amber-300",
-          glow: "from-amber-400/40",
+          accent: "text-emerald-400",
+          glow: "from-emerald-500/40",
           items: [
             { name: "Git", icon: "git" },
             { name: "GitHub", icon: "github" },
-            { name: "VS Code", icon: null },
+            { name: "VS Code", icon: "vscode" },
+            { name: "Vercel", icon: "vercel" },
           ],
         },
         {
           title: "Extras",
-          accent: "text-emerald-300",
-          glow: "from-emerald-400/35",
-          items: [
-            { name: "Unity / VR (plus)", icon: null },
-            { name: "Multiplataforma", icon: null },
-          ],
+          accent: "text-violet-400",
+          glow: "from-violet-500/40",
+          items: [{ name: "Unity", icon: "unity" }],
         },
       ],
     },
@@ -143,6 +153,9 @@ export const texts = {
     },
   },
 
+  /* =======================
+     ENGLISH (EN)
+  ======================= */
   en: {
     nav: {
       inicio: "Home",
@@ -155,7 +168,8 @@ export const texts = {
     hero: {
       subtitleTyping: ["Software Engineer", "Backend Developer", "Developer"],
       name: "Juanjo Rincón",
-      tagline: "I build backend software focused on clarity, structure and quality.",
+      tagline:
+        "I build backend software focused on clarity, structure and quality.",
       available: "Available for work",
     },
 
@@ -166,7 +180,8 @@ export const texts = {
       items: [
         {
           role: "Software Engineer · Backend",
-          company: "Municipal Institute of Urban Planning — Barcelona City Council",
+          company:
+            "Municipal Institute of Urban Planning — Barcelona City Council",
           date: "Oct 2024 — Present",
           desc: [
             "Develop and maintain mission-critical internal software for municipal operations.",
@@ -201,50 +216,55 @@ export const texts = {
     },
 
     skills: {
-      title: "Skills & Technologies",
-      subtitle: "A clear stack, focused on backend engineering and software quality.",
+      title: "Skills",
+      subtitle: "Technologies and tools I work with",
       groups: [
         {
-          title: "Backend & Languages",
-          accent: "text-violet-300",
-          glow: "from-violet-400/40",
-          items: [
-            { name: "Java", icon: "java" },
-            { name: "C#", icon: "csharp" },
-            { name: "MySQL", icon: "mysql" },
-            { name: "REST APIs", icon: null },
-          ],
-        },
-        {
           title: "Frontend",
-          accent: "text-cyan-300",
-          glow: "from-cyan-400/40",
+          accent: "text-pink-400",
+          glow: "from-pink-500/40",
           items: [
             { name: "HTML", icon: "html" },
             { name: "CSS", icon: "css" },
             { name: "JavaScript", icon: "js" },
+            { name: "TypeScript", icon: "typescript" },
             { name: "React", icon: "react" },
-            { name: "Tailwind", icon: "tailwind" },
+            { name: "Vue", icon: "vue" },
+            { name: "Angular", icon: "angular" },
+            { name: "Tailwind CSS", icon: "tailwind" },
+            { name: "WordPress", icon: "wordpress" },
+          ],
+        },
+        {
+          title: "Backend",
+          accent: "text-cyan-400",
+          glow: "from-cyan-500/40",
+          items: [
+            { name: "Java", icon: "java" },
+            { name: "C#", icon: "csharp" },
+            { name: ".NET", icon: "dotnet" },
+            { name: "PHP", icon: "php" },
+            { name: "REST API", icon: "api" },
+            { name: "MySQL", icon: "mysql" },
+            { name: "MongoDB", icon: "mongodb" },
           ],
         },
         {
           title: "Tools",
-          accent: "text-amber-300",
-          glow: "from-amber-400/40",
+          accent: "text-emerald-400",
+          glow: "from-emerald-500/40",
           items: [
             { name: "Git", icon: "git" },
             { name: "GitHub", icon: "github" },
-            { name: "VS Code", icon: null },
+            { name: "VS Code", icon: "vscode" },
+            { name: "Vercel", icon: "vercel" },
           ],
         },
         {
           title: "Extras",
-          accent: "text-emerald-300",
-          glow: "from-emerald-400/35",
-          items: [
-            { name: "Unity / VR (plus)", icon: null },
-            { name: "Cross-platform", icon: null },
-          ],
+          accent: "text-violet-400",
+          glow: "from-violet-500/40",
+          items: [{ name: "Unity", icon: "unity" }],
         },
       ],
     },
