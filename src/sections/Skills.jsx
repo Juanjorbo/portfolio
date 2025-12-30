@@ -11,11 +11,11 @@ import {
   SiDotnet,
   SiOpenjdk,
 } from "react-icons/si";
+import MatrixText from "../components/MatrixText";
 
 const cardVariants = { rest: { y: 0 }, hover: { y: -9 } };
 const glowVariants = { rest: { opacity: 0 }, hover: { opacity: 1 } };
 
-// mapeo iconos por string (para poder traducir todo desde texts.js)
 const ICONS = {
   html: SiHtml5,
   css: SiCss3,
@@ -42,7 +42,7 @@ function SkillTile({ name, iconKey }) {
   );
 }
 
-export default function Skills({ t }) {
+export default function Skills({ t, scrambleKey }) {
   const groups = t.skills.groups;
 
   return (
@@ -54,7 +54,7 @@ export default function Skills({ t }) {
         transition={{ duration: 0.6 }}
         className="text-3xl md:text-4xl font-semibold text-center"
       >
-        {t.skills.title}
+        <MatrixText text={t.skills.title} scrambleKey={scrambleKey} />
       </motion.h2>
 
       <motion.p
@@ -64,7 +64,7 @@ export default function Skills({ t }) {
         transition={{ duration: 0.6, delay: 0.05 }}
         className="text-zinc-300 text-center max-w-2xl mx-auto mt-4"
       >
-        {t.skills.subtitle}
+        <MatrixText text={t.skills.subtitle} scrambleKey={scrambleKey} />
       </motion.p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
@@ -90,7 +90,9 @@ export default function Skills({ t }) {
 
             <div className="pointer-events-none absolute -top-24 -right-24 w-56 h-56 rounded-full bg-white/10 blur-3xl" />
 
-            <h3 className={`text-xl font-semibold ${group.accent}`}>{group.title}</h3>
+            <h3 className={`text-xl font-semibold ${group.accent}`}>
+              <MatrixText text={group.title} scrambleKey={scrambleKey} />
+            </h3>
 
             <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 gap-3">
               {group.items.map((it) => (

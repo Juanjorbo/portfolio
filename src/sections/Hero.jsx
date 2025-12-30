@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import MatrixText from "../components/MatrixText";
 
-function AvailabilityBadge({ t }) {
+function AvailabilityBadge({ t, scrambleKey }) {
   return (
     <a
       href="https://www.linkedin.com/in/juanjorincon/"
@@ -11,17 +12,20 @@ function AvailabilityBadge({ t }) {
                  border border-emerald-400/40 bg-zinc-900/60 text-white/90
                  hover:bg-zinc-900/80 transition"
     >
-      {t.hero.available}
+      <MatrixText
+        text={t.hero.available}
+        scrambleKey={scrambleKey}
+      />
     </a>
   );
 }
 
-export default function Hero({ t }) {
+export default function Hero({ t, scrambleKey }) {
   const [a, b, c] = t.hero.subtitleTyping;
 
   return (
     <section className="min-h-screen flex flex-col px-6 pt-24">
-      {/* Centro: foto + texto */}
+      {/* Centro */}
       <div className="flex-1 flex items-center justify-center">
         <div className="w-full max-w-5xl">
           <div className="flex flex-col md:flex-row items-center justify-center gap-10">
@@ -44,6 +48,7 @@ export default function Hero({ t }) {
 
             {/* Texto */}
             <div className="text-center md:text-left">
+              {/* Typing (este NO lo tocamos, ya es animado) */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -67,36 +72,44 @@ export default function Hero({ t }) {
                 />
               </motion.div>
 
+              {/* Nombre */}
               <motion.h1
                 initial={{ opacity: 0, y: 26 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
                 className="text-5xl md:text-6xl font-bold mt-3"
               >
-                {t.hero.name}
+                <MatrixText
+                  text={t.hero.name}
+                  scrambleKey={scrambleKey}
+                />
               </motion.h1>
 
+              {/* Tagline */}
               <motion.p
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.18 }}
                 className="text-lg md:text-xl text-zinc-300 max-w-xl mt-5 leading-relaxed mx-auto md:mx-0"
               >
-                {t.hero.tagline}
+                <MatrixText
+                  text={t.hero.tagline}
+                  scrambleKey={scrambleKey}
+                />
               </motion.p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Abajo: badge centrado */}
+      {/* Abajo */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className="pb-10 flex justify-center"
       >
-        <AvailabilityBadge t={t} />
+        <AvailabilityBadge t={t} scrambleKey={scrambleKey} />
       </motion.div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import MatrixText from "../components/MatrixText";
 
-export default function Portfolio({ t }) {
+export default function Portfolio({ t, scrambleKey }) {
   return (
     <section className="py-24 px-6 max-w-6xl mx-auto">
       <motion.h2
@@ -10,7 +11,7 @@ export default function Portfolio({ t }) {
         transition={{ duration: 0.6 }}
         className="text-3xl md:text-4xl font-semibold text-center"
       >
-        {t.portfolio.title}
+        <MatrixText text={t.portfolio.title} scrambleKey={scrambleKey} />
       </motion.h2>
 
       <motion.p
@@ -20,7 +21,7 @@ export default function Portfolio({ t }) {
         transition={{ duration: 0.6, delay: 0.05 }}
         className="text-zinc-300 text-center max-w-2xl mx-auto mt-4"
       >
-        {t.portfolio.subtitle}
+        <MatrixText text={t.portfolio.subtitle} scrambleKey={scrambleKey} />
       </motion.p>
 
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -29,10 +30,12 @@ export default function Portfolio({ t }) {
             key={i}
             className="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition"
           >
-            <h3 className="text-white font-semibold">{project.title}</h3>
+            <h3 className="text-white font-semibold">
+              <MatrixText text={project.title} scrambleKey={scrambleKey} />
+            </h3>
 
             <p className="text-zinc-400 mt-2 text-sm leading-relaxed">
-              {project.description}
+              <MatrixText text={project.description} scrambleKey={scrambleKey} />
             </p>
 
             <div className="mt-4 flex flex-wrap gap-2">
@@ -54,7 +57,7 @@ export default function Portfolio({ t }) {
                   rel="noreferrer"
                   className="text-sm font-semibold text-white hover:underline"
                 >
-                  Demo →
+                  <MatrixText text={"Demo →"} scrambleKey={scrambleKey} />
                 </a>
               )}
               {project.github && (
@@ -64,7 +67,7 @@ export default function Portfolio({ t }) {
                   rel="noreferrer"
                   className="text-sm font-semibold text-white hover:underline"
                 >
-                  GitHub →
+                  <MatrixText text={"GitHub →"} scrambleKey={scrambleKey} />
                 </a>
               )}
             </div>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import MatrixText from "../components/MatrixText";
 
 function TechChips({ items }) {
   return (
@@ -15,19 +16,27 @@ function TechChips({ items }) {
   );
 }
 
-function Card({ item }) {
+function Card({ item, scrambleKey }) {
   return (
     <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
       <div className="flex items-start justify-between gap-4">
-        <h3 className="text-xl font-semibold">{item.role}</h3>
-        <span className="text-xs text-zinc-400 whitespace-nowrap">{item.date}</span>
+        <h3 className="text-xl font-semibold">
+          <MatrixText text={item.role} scrambleKey={scrambleKey} />
+        </h3>
+        <span className="text-xs text-zinc-400 whitespace-nowrap">
+          <MatrixText text={item.date} scrambleKey={scrambleKey} />
+        </span>
       </div>
 
-      <p className="text-zinc-300 mt-2">{item.company}</p>
+      <p className="text-zinc-300 mt-2">
+        <MatrixText text={item.company} scrambleKey={scrambleKey} />
+      </p>
 
       <ul className="mt-4 space-y-2 text-sm text-zinc-400 leading-relaxed list-disc list-inside">
         {item.desc.map((p, idx) => (
-          <li key={idx}>{p}</li>
+          <li key={idx}>
+            <MatrixText text={p} scrambleKey={scrambleKey} />
+          </li>
         ))}
       </ul>
 
@@ -36,7 +45,7 @@ function Card({ item }) {
   );
 }
 
-export default function Experience({ t }) {
+export default function Experience({ t, scrambleKey }) {
   const items = t.experience.items;
 
   return (
@@ -48,7 +57,7 @@ export default function Experience({ t }) {
         transition={{ duration: 0.6 }}
         className="text-3xl md:text-4xl font-semibold text-center"
       >
-        {t.experience.title}
+        <MatrixText text={t.experience.title} scrambleKey={scrambleKey} />
       </motion.h2>
 
       <motion.p
@@ -58,7 +67,7 @@ export default function Experience({ t }) {
         transition={{ duration: 0.6, delay: 0.05 }}
         className="text-zinc-300 text-center max-w-2xl mx-auto mt-4"
       >
-        {t.experience.subtitle}
+        <MatrixText text={t.experience.subtitle} scrambleKey={scrambleKey} />
       </motion.p>
 
       <div className="relative mt-12">
@@ -80,8 +89,12 @@ export default function Experience({ t }) {
                 <div className="absolute left-1/2 top-7 -translate-x-1/2 h-3 w-3 rounded-full bg-white/40" />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-                  <div className="md:pr-10">{isLeft && <Card item={item} />}</div>
-                  <div className="md:pl-10">{!isLeft && <Card item={item} />}</div>
+                  <div className="md:pr-10">
+                    {isLeft && <Card item={item} scrambleKey={scrambleKey} />}
+                  </div>
+                  <div className="md:pl-10">
+                    {!isLeft && <Card item={item} scrambleKey={scrambleKey} />}
+                  </div>
                 </div>
               </motion.div>
             );
