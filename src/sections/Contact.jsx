@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import MatrixText from "../components/MatrixText";
 
-export default function Contact({ t, scrambleKey }) {
+export default function Contact({ t }) {
   return (
     <section className="py-24 px-6 max-w-6xl mx-auto text-center">
       <motion.h2
@@ -9,9 +8,9 @@ export default function Contact({ t, scrambleKey }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl font-semibold"
+        className="text-3xl md:text-4xl font-semibold text-[rgb(var(--text))]"
       >
-        <MatrixText text={t.contact.title} scrambleKey={scrambleKey} />
+        {t.contact.title}
       </motion.h2>
 
       <motion.p
@@ -19,9 +18,9 @@ export default function Contact({ t, scrambleKey }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.05 }}
-        className="text-zinc-300 max-w-2xl mx-auto mt-4"
+        className="max-w-2xl mx-auto mt-4 text-[rgb(var(--muted))]"
       >
-        <MatrixText text={t.contact.subtitle} scrambleKey={scrambleKey} />
+        {t.contact.subtitle}
       </motion.p>
 
       <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -29,16 +28,30 @@ export default function Contact({ t, scrambleKey }) {
           href="https://www.linkedin.com/in/juanjorincon/"
           target="_blank"
           rel="noreferrer"
-          className="px-7 py-3 rounded-2xl font-semibold bg-white text-black hover:bg-zinc-200 transition"
+          className="
+            px-7 py-3 rounded-2xl font-semibold
+            border border-[rgb(var(--border))]
+            bg-[rgb(var(--btn))]
+            text-[rgb(var(--text))]
+            hover:bg-[rgb(var(--btn-hover))]
+            transition
+          "
         >
-          <MatrixText text={t.contact.linkedin} scrambleKey={scrambleKey} />
+          {t.contact.linkedin}
         </a>
 
         <a
           href="mailto:TU_EMAIL_AQUI"
-          className="px-7 py-3 rounded-2xl font-semibold border border-white/15 bg-white/5 hover:bg-white/10 transition"
+          className="
+            px-7 py-3 rounded-2xl font-semibold
+            border border-[rgb(var(--border))]
+            bg-[rgb(var(--card))]
+            text-[rgb(var(--text))]
+            hover:bg-[rgb(var(--card-hover))]
+            transition
+          "
         >
-          <MatrixText text={t.contact.email} scrambleKey={scrambleKey} />
+          {t.contact.email}
         </a>
       </div>
     </section>

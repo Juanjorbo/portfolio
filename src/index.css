@@ -1,75 +1,164 @@
 ﻿@import "tailwindcss";
 
+/* =========================
+   NAV LINK FX
+========================= */
 .nav-link-fx {
   position: relative;
   display: inline-block;
 }
-
 .nav-link-fx::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -0.2em;
+  bottom: -0.25em;
   width: 0%;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    rgb(52, 211, 153),
-    rgb(34, 211, 238)
-  );
+  background: linear-gradient(90deg, rgb(var(--accent)), rgb(var(--accent-soft)));
   transform: translateX(-50%);
   transition: width 0.3s ease;
 }
-
-.nav-link-fx::before {
-  content: "";
-  position: absolute;
-  inset: -0.25em -0.4em;
-  border-radius: 0.5rem;
-  background: rgba(52, 211, 153, 0.18);
-  filter: blur(14px);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
 .nav-link-fx:hover::after {
   width: 100%;
 }
 
-.nav-link-fx:hover::before {
-  opacity: 1;
-}
-
-/* ===== Theme tokens ===== */
+/* =========================
+   BASE (DEFAULT = DARK)
+========================= */
 :root {
   --bg-from: 9 9 11;
   --bg-via: 24 24 27;
   --bg-to: 0 0 0;
+
   --text: 255 255 255;
   --muted: 161 161 170;
+
+  --card: 255 255 255 / 0.06;
+  --card-hover: 255 255 255 / 0.10;
+  --border: 255 255 255 / 0.12;
+
+  --btn: 255 255 255 / 0.08;
+  --btn-hover: 255 255 255 / 0.14;
+
+  --nav-solid: 9 9 11;
+
   --accent: 16 185 129;
+  --accent-soft: 52 211 153;
+
+  --glow: 255 255 255;
+  --glow-soft: 255 255 255;
 }
 
-/* ===== DARK (default) ===== */
-html.theme-dark {
-  --bg-from: 9 9 11;
-  --bg-via: 24 24 27;
-  --bg-to: 0 0 0;
-  --text: 255 255 255;
-  --muted: 161 161 170;
-  --accent: 16 185 129;
-}
-
-/* ===== LIGHT ===== */
+/* =========================
+   LIGHT THEME
+========================= */
 html.theme-light {
   --bg-from: 244 244 245;
   --bg-via: 255 255 255;
-  --bg-to: 228 228 231;  
+  --bg-to: 228 228 231;
+
   --text: 9 9 11;
-  --muted: 63 63 70; 
-  --accent: 2 132 199;    
+  --muted: 63 63 70;
+
+  --card: 0 0 0 / 0.04;
+  --card-hover: 0 0 0 / 0.08;
+  --border: 0 0 0 / 0.14;
+
+  --btn: 0 0 0 / 0.06;
+  --btn-hover: 0 0 0 / 0.12;
+
+  --nav-solid: 255 255 255;
+
+  --accent: 2 132 199;
+  --accent-soft: 56 189 248;
+
+  --glow: 0 0 0;
+  --glow-soft: 0 0 0;
 }
 
+/* =========================
+   MATRIX THEME
+========================= */
+html.theme-matrix {
+  --bg-from: 0 0 0;
+  --bg-via: 0 0 0;
+  --bg-to: 0 0 0;
 
+  --text: 34 197 94;
+  --muted: 22 163 74;
 
+  --card: 0 0 0 / 0.9;
+  --card-hover: 0 0 0 / 1;
+
+  --border: 34 197 94 / 0.55;
+
+  --btn: 34 197 94 / 0.18;
+  --btn-hover: 34 197 94 / 0.32;
+
+  --nav-solid: 0 0 0;
+
+  --accent: 34 197 94;
+  --accent-soft: 74 222 128;
+
+  --glow: 34 197 94;
+  --glow-soft: 22 163 74;
+}
+
+/* =========================
+   SKILLS — INSET MASK
+========================= */
+.skills-inset-mask {
+  box-shadow: inset 0 0 0 1px rgb(var(--border));
+  mask-image: radial-gradient(circle at 50% 35%, black 55%, transparent 78%);
+  -webkit-mask-image: radial-gradient(circle at 50% 35%, black 55%, transparent 78%);
+  opacity: 0.65;
+}
+
+/* =========================
+   MATRIX — SKILLS OVERRIDES
+========================= */
+html.theme-matrix .skills-glow-outer,
+html.theme-matrix .skills-glow-inner {
+  background: none !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 0 !important;
+}
+
+html.theme-matrix .skills-card {
+  box-shadow:
+    0 0 0 1px rgb(var(--border)),
+    -6px -6px 18px rgb(var(--glow) / 0.30),
+    -10px -10px 34px rgb(var(--glow) / 0.18),
+    inset 4px 4px 18px rgb(var(--glow-soft) / 0.16);
+}
+
+html.theme-matrix .skills-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px; /* rounded-3xl */
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 15%, rgb(var(--glow) / 0.22), transparent 55%);
+}
+
+html.theme-matrix .skills-title {
+  color: rgb(var(--text)) !important;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(var(--bg-from));
+  color: rgb(var(--text));
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

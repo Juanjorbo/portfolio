@@ -13,7 +13,7 @@ import Contact from "./sections/Contact";
 
 function applyTheme(theme) {
   const root = document.documentElement;
-  root.classList.remove("theme-dark", "theme-light");
+  root.classList.remove("theme-dark", "theme-light", "theme-matrix");
   root.classList.add(theme);
 }
 
@@ -32,36 +32,39 @@ export default function App() {
 
   return (
     <div
-      className="min-h-screen
-                 text-[rgb(var(--text))]
-                 bg-gradient-to-br
-                 from-[rgb(var(--bg-from))]
-                 via-[rgb(var(--bg-via))]
-                 to-[rgb(var(--bg-to))]"
+      className="
+        min-h-screen
+        text-[rgb(var(--text))]
+        bg-gradient-to-br
+        from-[rgb(var(--bg-from))]
+        via-[rgb(var(--bg-via))]
+        to-[rgb(var(--bg-to))]
+      "
     >
-      <Navbar t={t} theme={theme} setTheme={setTheme} scrambleKey={lang} />
+      <Navbar t={t} theme={theme} setTheme={setTheme} />
+
       <LanguageFloating lang={lang} setLang={setLang} />
 
       <main>
         <section id="resume" className="scroll-mt-28">
-          <Hero t={t} scrambleKey={lang} />
+          <Hero t={t} />
         </section>
 
         <section id="experiencia" className="scroll-mt-28">
-          <Experience t={t} scrambleKey={lang} />
-          <Skills t={t} scrambleKey={lang} />
+          <Experience t={t} />
+          <Skills t={t} />
         </section>
 
         <section id="portfolio" className="scroll-mt-28">
-          <Portfolio t={t} scrambleKey={lang} />
+          <Portfolio t={t} />
         </section>
 
         <section id="about" className="scroll-mt-28">
-          <About t={t} scrambleKey={lang} />
+          <About t={t} />
         </section>
 
         <section id="contact" className="scroll-mt-28">
-          <Contact t={t} scrambleKey={lang} />
+          <Contact t={t} />
         </section>
       </main>
     </div>

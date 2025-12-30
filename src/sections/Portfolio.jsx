@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import MatrixText from "../components/MatrixText";
 
-export default function Portfolio({ t, scrambleKey }) {
+export default function Portfolio({ t }) {
   return (
     <section className="py-24 px-6 max-w-6xl mx-auto">
       <motion.h2
@@ -9,9 +8,9 @@ export default function Portfolio({ t, scrambleKey }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-3xl md:text-4xl font-semibold text-center"
+        className="text-3xl md:text-4xl font-semibold text-center text-[rgb(var(--text))]"
       >
-        <MatrixText text={t.portfolio.title} scrambleKey={scrambleKey} />
+        {t.portfolio.title}
       </motion.h2>
 
       <motion.p
@@ -19,45 +18,53 @@ export default function Portfolio({ t, scrambleKey }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.05 }}
-        className="text-zinc-300 text-center max-w-2xl mx-auto mt-4"
+        className="text-center max-w-2xl mx-auto mt-4 text-[rgb(var(--muted))]"
       >
-        <MatrixText text={t.portfolio.subtitle} scrambleKey={scrambleKey} />
+        {t.portfolio.subtitle}
       </motion.p>
 
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
         {t.portfolio.projects.map((project, i) => (
           <div
             key={i}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition"
+            className="
+              rounded-3xl border border-[rgb(var(--border))]
+              bg-[rgb(var(--card))] p-6
+              hover:bg-[rgb(var(--card-hover))]
+              transition
+            "
           >
-            <h3 className="text-white font-semibold">
-              <MatrixText text={project.title} scrambleKey={scrambleKey} />
-            </h3>
+            <h3 className="font-semibold text-[rgb(var(--text))]">{project.title}</h3>
 
-            <p className="text-zinc-400 mt-2 text-sm leading-relaxed">
-              <MatrixText text={project.description} scrambleKey={scrambleKey} />
+            <p className="mt-2 text-sm leading-relaxed text-[rgb(var(--muted))]">
+              {project.description}
             </p>
 
             <div className="mt-4 flex flex-wrap gap-2">
               {project.stack.map((tech) => (
                 <span
                   key={tech}
-                  className="text-xs px-2 py-1 rounded-full border border-white/10 bg-white/5 text-zinc-200"
+                  className="
+                    text-xs px-2 py-1 rounded-full
+                    border border-[rgb(var(--border))]
+                    bg-[rgb(var(--btn))]
+                    text-[rgb(var(--text))]
+                  "
                 >
                   {tech}
                 </span>
               ))}
             </div>
 
-            <div className="mt-5 flex gap-3">
+            <div className="mt-5 flex gap-4">
               {project.demo && (
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm font-semibold text-white hover:underline"
+                  className="text-sm font-semibold text-[rgb(var(--text))] hover:underline"
                 >
-                  <MatrixText text={"Demo →"} scrambleKey={scrambleKey} />
+                  Demo →
                 </a>
               )}
               {project.github && (
@@ -65,9 +72,9 @@ export default function Portfolio({ t, scrambleKey }) {
                   href={project.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm font-semibold text-white hover:underline"
+                  className="text-sm font-semibold text-[rgb(var(--text))] hover:underline"
                 >
-                  <MatrixText text={"GitHub →"} scrambleKey={scrambleKey} />
+                  GitHub →
                 </a>
               )}
             </div>
