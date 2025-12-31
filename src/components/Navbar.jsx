@@ -2,15 +2,35 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi2";
 
-function useScrolled(threshold = 24) {
+/**
+ * Histeresis:
+ * - Se activa a partir de showAt px
+ * - Se desactiva cuando vuelves a hideAt px
+ * Evita que el navbar se quede "siempre activo".
+ */
+function useScrolled(showAt = 80, hideAt = 20) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > threshold);
+    const getY = () =>
+      window.scrollY ??
+      document.documentElement.scrollTop ??
+      document.body.scrollTop ??
+      0;
+
+    const onScroll = () => {
+      const y = getY();
+      setScrolled((prev) => {
+        if (!prev && y >= showAt) return true;
+        if (prev && y <= hideAt) return false;
+        return prev;
+      });
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [threshold]);
+  }, [showAt, hideAt]);
 
   return scrolled;
 }
@@ -106,14 +126,15 @@ function ThemeIconDropdown({ theme, setTheme }) {
 }
 
 export default function Navbar({ t, theme, setTheme }) {
-  const scrolled = useScrolled(24);
+  // antes: useScrolled(24)
+  // ahora: aparece a 80px, se quita al volver a 20px
+  const scrolled = useScrolled(80, 20);
 
   const LINKS = [
     { label: t?.nav?.inicio ?? "Inicio", href: "#resume" },
     { label: t?.nav?.experiencia ?? "Experiencia", href: "#experiencia" },
     { label: t?.nav?.portfolio ?? "Portfolio", href: "#portfolio" },
     { label: t?.nav?.about ?? "Sobre mí", href: "#about" },
-    { label: t?.nav?.contacto ?? "Contacto", href: "#contact" },
   ];
 
   return (
@@ -122,13 +143,13 @@ export default function Navbar({ t, theme, setTheme }) {
         initial={false}
         animate={{ y: scrolled ? 12 : 0, scale: scrolled ? 0.98 : 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 26 }}
-        className="
-          pointer-events-auto mx-auto mt-3
-          w-fit rounded-2xl px-4 py-2
-          border border-[rgb(var(--border))]
-          bg-[rgb(var(--nav-solid))]
-          shadow-lg
-        "
+        className={[
+          "pointer-events-auto mx-auto mt-3",
+          "w-fit rounded-2xl px-4 py-2",
+          scrolled
+            ? "border border-[rgb(var(--border))] bg-[rgb(var(--nav-solid))] shadow-lg"
+            : "border border-transparent bg-transparent shadow-none",
+        ].join(" ")}
       >
         <div className="flex items-center gap-1">
           {LINKS.map((l) => (

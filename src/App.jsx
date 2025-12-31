@@ -9,7 +9,6 @@ import Experience from "./sections/Experience";
 import Skills from "./sections/Skills";
 import Portfolio from "./sections/Portfolio";
 import About from "./sections/About";
-import Contact from "./sections/Contact";
 
 function applyTheme(theme) {
   const root = document.documentElement;
@@ -61,10 +60,6 @@ export default function App() {
 
         <section id="about" className="scroll-mt-28">
           <About t={t} />
-        </section>
-
-        <section id="contact" className="scroll-mt-28">
-          <Contact t={t} />
         </section>
       </main>
     </div>

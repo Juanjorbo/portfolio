@@ -129,7 +129,7 @@ export default function Hero({ t }) {
 
                 {/* cambiar */}
                 <a
-                  href="/public/cv/CV_JuanjoRincon.pdf"
+                  href="/public/cv/Juanjo_Rincon_CV.pdf"
                   download
                   className="
                     inline-flex items-center gap-2
@@ -156,7 +156,6 @@ export default function Hero({ t }) {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="pb-10 flex justify-center"
       >
-        <AvailabilityBadge t={t} />
       </motion.div>
     </section>
   );
