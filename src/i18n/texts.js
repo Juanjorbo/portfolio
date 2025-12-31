@@ -120,14 +120,14 @@ export const texts = {
       projects: [
         {
           title: "Plataforma de Tickets (osTicket) — Setup & Diseño",
-          image: "/public/images/prova.png",
+          image: "/images/prova.png",
           description:
             "Implementé una plataforma de soporte basada en osTicket, definiendo toda la estructura de trabajo para gestionar incidencias de forma clara y escalable. Diseñé el flujo completo de tickets, usuarios y permisos para que el sistema sea realista y operativo desde el primer día, cuidando tanto la organización interna como la experiencia de uso.",
           demo: "https://sit.netspain.app/IMU/",
         },
         {
           title: "Videojuego Shooter — Experiencia gráfica y gameplay",
-          image: "/public/images/project2.jpg",
+          image: "/images/project2.jpg",
           description:
             "Proyecto de videojuego creado desde cero como experiencia shooter por rondas, inspirado en el clásico modo zombis de Call of Duty. Ambientado en el Japón feudal, con foco en atmósfera visual, diseño de escenarios y progresión a través de oleadas de enemigos.",
           demo: "https://www.artstation.com/artwork/Zax080",
@@ -265,14 +265,14 @@ export const texts = {
       projects: [
         {
           title: "Ticketing Platform (osTicket) — Setup & Design",
-          image: "/public/images/prova.png",
+          image: "/images/prova.png",
           description:
             "I implemented a support ticketing platform based on osTicket, designing the full working structure to manage issues clearly and at scale. I built the complete ticket workflow, user and permission system so the platform feels realistic and ready to operate from day one, with a strong focus on organization and usability.",
           demo: "https://sit.netspain.app/IMU/",
         },
         {
           title: "Shooter Game — Gameplay & Visual Experience",
-          image: "/public/images/project2.jpg",
+          image: "/images/project2.jpg",
           description:
             "A game project built from scratch as a round-based shooter experience inspired by the classic Call of Duty Zombies mode. Set in feudal Japan, the project focuses on atmosphere, visual design and level composition.",
           demo: "https://www.artstation.com/artwork/Zax080",
