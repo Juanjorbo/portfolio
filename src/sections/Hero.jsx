@@ -41,7 +41,7 @@ export default function Hero({ t }) {
               <div className="absolute inset-0 rounded-full bg-[rgb(var(--accent))]/25 blur-3xl" />
               <div className="absolute inset-0 rounded-full bg-[rgb(var(--accent-soft))]/15 blur-2xl scale-110" />
               <img
-                src="/src/assets/profile.png"
+                src="/public/images/profile.png"
                 alt={t.hero.name}
                 className="
                   relative w-44 h-44 md:w-56 md:h-56 rounded-full object-cover

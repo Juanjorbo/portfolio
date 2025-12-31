@@ -72,7 +72,7 @@ export default function About({ t }) {
               "
             >
               <img
-                src="/src/assets/profile2.png"
+                src="/public/images/profile2.png"
                 alt={t.about.title}
                 className="w-64 h-72 md:w-80 md:h-96 object-cover"
                 draggable={false}
