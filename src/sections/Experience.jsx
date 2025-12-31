@@ -5,7 +5,6 @@ export default function Experience({ t }) {
 
   return (
     <section id="experiencia" className="py-24 px-6 max-w-6xl mx-auto">
-      {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: 18 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -16,7 +15,6 @@ export default function Experience({ t }) {
         {t.experience.title}
       </motion.h2>
 
-      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -27,9 +25,7 @@ export default function Experience({ t }) {
         {t.experience.subtitle}
       </motion.p>
 
-      {/* Timeline */}
       <div className="mt-14 relative">
-        {/* Central line */}
         <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-[rgb(var(--border))]" />
 
         <div className="space-y-10">
@@ -56,10 +52,6 @@ export default function Experience({ t }) {
                   "
                 />
 
-                {/* Card wrapper:
-                    - Mobile: padding left for line + dot
-                    - Desktop: half width, align left/right alternating
-                */}
                 <div
                   className={[
                     "pl-10 md:pl-0",

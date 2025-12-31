@@ -126,8 +126,6 @@ function ThemeIconDropdown({ theme, setTheme }) {
 }
 
 export default function Navbar({ t, theme, setTheme }) {
-  // antes: useScrolled(24)
-  // ahora: aparece a 80px, se quita al volver a 20px
   const scrolled = useScrolled(80, 20);
 
   const LINKS = [

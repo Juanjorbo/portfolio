@@ -41,7 +41,7 @@ export default function Hero({ t }) {
               <div className="absolute inset-0 rounded-full bg-[rgb(var(--accent))]/25 blur-3xl" />
               <div className="absolute inset-0 rounded-full bg-[rgb(var(--accent-soft))]/15 blur-2xl scale-110" />
               <img
-                src="/public/images/profile.png"
+                src="/images/profile.png"
                 alt={t.hero.name}
                 className="
                   relative w-44 h-44 md:w-56 md:h-56 rounded-full object-cover
@@ -129,7 +129,7 @@ export default function Hero({ t }) {
 
                 {/* cambiar */}
                 <a
-                  href="/public/cv/Juanjo_Rincon_CV.pdf"
+                  href="/cv/Juanjo_Rincon_CV.pdf"
                   download
                   className="
                     inline-flex items-center gap-2
