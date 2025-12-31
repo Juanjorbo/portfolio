@@ -115,28 +115,31 @@ export const texts = {
       ],
     },
 
-    portfolio: {
-      title: "Portfolio",
-      subtitle: "Proyectos seleccionados con demo, código y stack.",
-      projects: [
-        {
-          title: "Proyecto en desarrollo",
-          description:
-            "Aplicación web enfocada en buenas prácticas, estructura y desarrollo profesional.",
-          stack: ["React", "Tailwind", "Backend"],
-          demo: null,
-          github: null,
-        },
-        {
-          title: "Otro proyecto",
-          description:
-            "Proyecto personal para experimentar con arquitectura y lógica de negocio.",
-          stack: ["Java", "APIs", "MySQL"],
-          demo: null,
-          github: null,
-        },
-      ],
+portfolio: {
+  title: "Portfolio",
+  subtitle: "Proyectos seleccionados con demo y enfoque en estructura y calidad.",
+  previewLabel: "Preview",
+  empty: "Aún no hay proyectos publicados.",
+  projects: [
+    {
+      title: "Plataforma de Tickets (osTicket) — Setup & Diseño",
+      image: "/src/assets/prova.png",
+      description:
+        "Implementé una plataforma de soporte basada en osTicket, definiendo toda la estructura de trabajo para gestionar incidencias de forma clara y escalable. Diseñé el flujo completo de tickets, usuarios y permisos para que el sistema sea realista y operativo desde el primer día, cuidando tanto la organización interna como la experiencia de uso.",
+      demo: "https://sit.netspain.app/IMU/",
     },
+    {
+      title: "Videojuego Shooter — Experiencia gráfica y gameplay",
+      image: "/src/assets/project2.jpg",
+      description:
+        "Proyecto de videojuego creado desde cero como experiencia shooter por rondas, inspirado en el clásico modo zombis de Call of Duty. El juego está ambientado en el Japón feudal y pone especial énfasis en la atmósfera visual, el diseño de escenarios y la sensación de progresión a través de oleadas de enemigos, combinando jugabilidad y narrativa visual.",
+      demo: "https://www.artstation.com/artwork/Zax080",
+      icon: "artstation",
+      previewLabel: "ArtStation",
+    },
+  ],
+},
+
 
     contact: {
       title: "Contacto",
@@ -269,28 +272,31 @@ export const texts = {
       ],
     },
 
-    portfolio: {
-      title: "Projects",
-      subtitle: "Selected projects with demo, code and stack.",
-      projects: [
-        {
-          title: "Work in progress project",
-          description:
-            "Web application focused on best practices, structure and professional development.",
-          stack: ["React", "Tailwind", "Backend"],
-          demo: null,
-          github: null,
-        },
-        {
-          title: "Another project",
-          description:
-            "Personal project to experiment with architecture and business logic.",
-          stack: ["Java", "APIs", "MySQL"],
-          demo: null,
-          github: null,
-        },
-      ],
+portfolio: {
+  title: "Projects",
+  subtitle: "Selected projects with demos and a focus on structure and quality.",
+  previewLabel: "Preview",
+  empty: "No projects published yet.",
+  projects: [
+    {
+      title: "Ticketing Platform (osTicket) — Setup & Design",
+      image: "/src/assets/prova.png",
+      description:
+        "I implemented a support ticketing platform based on osTicket, designing the full working structure to manage issues clearly and at scale. I built the complete ticket workflow, user and permission system so the platform feels realistic and ready to operate from day one, with a strong focus on organization and usability.",
+      demo: "https://sit.netspain.app/IMU/",
     },
+    {
+      title: "Shooter Game — Gameplay & Visual Experience",
+      image: "/src/assets/project2.jpg",
+      description:
+        "A game project built from scratch as a round-based shooter experience, inspired by the classic Call of Duty Zombies mode. Set in ancient feudal Japan, the project focuses on atmosphere, visual design and level composition, delivering a strong sense of progression through enemy waves while blending gameplay and visual storytelling.",
+      demo: "https://www.artstation.com/artwork/Zax080",
+      icon: "artstation",
+      previewLabel: "ArtStation",
+    },
+  ],
+},
+
 
     contact: {
       title: "Contact",

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { HiArrowDownTray } from "react-icons/hi2";
+import { SiLinkedin, SiGithub } from "react-icons/si";
 
 function AvailabilityBadge({ t }) {
   return (
@@ -29,6 +31,7 @@ export default function Hero({ t }) {
       <div className="flex-1 flex items-center justify-center">
         <div className="w-full max-w-5xl">
           <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+            {/* FOTO */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -48,6 +51,7 @@ export default function Hero({ t }) {
               />
             </motion.div>
 
+            {/* TEXTO */}
             <div className="text-center md:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -82,6 +86,65 @@ export default function Hero({ t }) {
               >
                 {t.hero.tagline}
               </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="mt-6 flex items-center justify-center md:justify-start gap-3"
+              >
+                <a
+                  href="https://www.linkedin.com/in/juanjorincon/"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="
+                    p-3 rounded-xl
+                    border border-[rgb(var(--border))]
+                    bg-[rgb(var(--btn))]
+                    text-[rgb(var(--text))]
+                    hover:bg-[rgb(var(--btn-hover))]
+                    transition
+                  "
+                >
+                  <SiLinkedin className="w-5 h-5" />
+                </a>
+
+                <a
+                  href="https://github.com/juanjorbo"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  className="
+                    p-3 rounded-xl
+                    border border-[rgb(var(--border))]
+                    bg-[rgb(var(--btn))]
+                    text-[rgb(var(--text))]
+                    hover:bg-[rgb(var(--btn-hover))]
+                    transition
+                  "
+                >
+                  <SiGithub className="w-5 h-5" />
+                </a>
+
+                {/* cambiar */}
+                <a
+                  href="/public/cv/CV_JuanjoRincon.pdf"
+                  download
+                  className="
+                    inline-flex items-center gap-2
+                    rounded-xl px-4 py-3 text-sm font-semibold
+                    border border-[rgb(var(--border))]
+                    bg-[rgb(var(--accent))]
+                    text-white
+                    hover:opacity-90
+                    transition
+                  "
+                >
+                  <HiArrowDownTray className="w-5 h-5" />
+                  CV
+                </a>
+              </motion.div>
             </div>
           </div>
         </div>
