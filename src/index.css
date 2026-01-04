@@ -1,6 +1,27 @@
 ﻿@import "tailwindcss";
 
 /* =========================
+   RESPONSIVE GLOBAL
+========================= */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 110px;
+  }
+}
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* =========================
    NAV LINK FX
 ========================= */
 .nav-link-fx {

@@ -40,7 +40,8 @@ export default function App() {
         to-[rgb(var(--bg-to))]
       "
     >
-      <Navbar t={t} theme={theme} setTheme={setTheme} />
+      <Navbar t={t} theme={theme} setTheme={setTheme} lang={lang} setLang={setLang} />
+
 
       <LanguageFloating lang={lang} setLang={setLang} />
 

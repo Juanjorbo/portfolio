@@ -22,7 +22,7 @@ export default function LanguageFloating({ lang, setLang }) {
   }, []);
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="hidden md:block fixed top-4 right-4 z-50">
       <div ref={ref} className="relative">
         <button
           type="button"
