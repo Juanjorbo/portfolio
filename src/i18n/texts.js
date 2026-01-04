@@ -120,7 +120,7 @@ export const texts = {
       projects: [
         {
           title: "Plataforma de Tickets (osTicket) — Setup & Diseño",
-          image: "/images/prova.png",
+          image: "/images/osticket.png",
           description:
             "Implementé una plataforma de soporte basada en osTicket, definiendo toda la estructura de trabajo para gestionar incidencias de forma clara y escalable. Diseñé el flujo completo de tickets, usuarios y permisos para que el sistema sea realista y operativo desde el primer día, cuidando tanto la organización interna como la experiencia de uso.",
           demo: "https://sit.netspain.app/IMU/",
@@ -265,7 +265,7 @@ export const texts = {
       projects: [
         {
           title: "Ticketing Platform (osTicket) — Setup & Design",
-          image: "/images/prova.png",
+          image: "/images/osticket.png",
           description:
             "I implemented a support ticketing platform based on osTicket, designing the full working structure to manage issues clearly and at scale. I built the complete ticket workflow, user and permission system so the platform feels realistic and ready to operate from day one, with a strong focus on organization and usability.",
           demo: "https://sit.netspain.app/IMU/",
