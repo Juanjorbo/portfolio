@@ -17,7 +17,7 @@ function applyTheme(theme) {
 }
 
 export default function App() {
-  const [lang, setLang] = useState("es");
+  const [lang, setLang] = useState("en");
   const t = texts[lang];
 
   const [theme, setTheme] = useState(() => {
