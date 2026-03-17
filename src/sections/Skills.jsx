@@ -30,7 +30,7 @@ const ICONS = {
   // Tools
   git: Si.SiGit,
   github: Si.SiGithub,
-  vscode: Si.SiVisualstudiocode,
+  vscode: Fi.FiCode,
 
   vercel: Si.SiVercel,
 
